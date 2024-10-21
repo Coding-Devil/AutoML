@@ -1,117 +1,126 @@
-# 🏆 Multi-Modal Distributed Machine Learning System 🏆
 
-Welcome to the **Multi-Modal Distributed Machine Learning System** project! This repository combines the power of **tabular data** and **image data** using **PyTorch Lightning**, **Ray Tune**, and **distributed computing** strategies. Whether you’re aiming for scalable model training or efficient hyperparameter tuning, this project has you covered. 🚀
+# 🧠 **Auto-ML : Meta-Modal Distributed ML Framework** 🚀
 
-## 📚 Overview
+Welcome to the **Meta-Modal Distributed Machine Learning Framework**, a next-gen solution for scaling **tabular** and **image data** models using cutting-edge tools like **PyTorch Lightning**, **Ray Tune**, and advanced **distributed computing** methodologies. This repository is designed for developers and researchers alike, offering powerful scalability and streamlined automation for your machine learning pipelines. 💡
 
-This project demonstrates how to build, train, and deploy a multi-modal machine learning model that processes **both tabular and image data**. It leverages distributed training techniques to scale across multiple devices, making it ideal for large datasets. The system is flexible, allowing for hyperparameter tuning, model compression, and deployment.
+## 🌐 **Overview**
 
-### Key Features 🌟
+This project focuses on building, training, and deploying a **multi-modal ML model** that integrates **tabular** and **image inputs**. It is built for **scalability** using distributed training techniques, enabling rapid development even for large datasets. It’s perfect for anyone looking to explore **hyperparameter tuning**, **model compression**, and **scalable deployment**.
 
-- **Multi-Modal Learning:** Integrates **image and tabular data** for enhanced predictions.
-- **Distributed Training:** Uses PyTorch Lightning’s **DDP Strategy** to scale training across devices.
-- **Hyperparameter Tuning:** Efficient tuning with **Ray Tune**.
-- **Model Compression:** Dynamic quantization for efficient deployment.
-- **Scalable Deployment:** Ready for real-world applications.
+### ✨ **Highlights**
 
-## 🛠️ Setup and Installation
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/username/multi-modal-distributed-ml.git
-cd multi-modal-distributed-ml
-```
-
-### 2. Install Dependencies
-
-Make sure you have the following dependencies installed:
-
-```bash
-pip install torch torchvision pytorch-lightning ray scikit-learn pandas pillow
-```
-
-### 3. Organize Your Data 📁
-
-- **Tabular Data:** Should be preprocessed and stored in a CSV file.
-- **Images:** Place your images in a designated directory, structured as needed.
-
-## 🧑‍💻 Usage Guide
-
-### 1. Preparing the Dataset
-
-This project assumes tabular data has been preprocessed and is ready to be combined with image data. Modify the `MultiModalDataset` class as necessary to match your data structure.
-
-### 2. Training the Model
-
-**Single-Device Training:**
-
-```bash
-python train_single.py
-```
-
-**Distributed Training:**
-
-```bash
-python -m torch.distributed.launch --nproc_per_node=2 train_distributed.py
-```
-
-*Adjust `nproc_per_node` to specify the number of devices.*
-
-### 3. Hyperparameter Tuning 🔧
-
-Use **Ray Tune** for distributed hyperparameter tuning:
-
-```bash
-python hyperparam_tune.py
-```
-
-### 4. Compress and Deploy
-
-Run the following command to compress the trained model for deployment:
-
-```bash
-python compress_and_save.py
-```
-
-## 🧩 Project Structure
-
-```
-multi-modal-distributed-ml/
-│
-├── data/                        # Data storage
-│   ├── images/                  # Image directory
-│   └── tabular.csv              # CSV file with tabular data
-│
-├── models/                      # Model architecture definitions
-│
-├── scripts/                     # Core scripts for training and evaluation
-│   ├── train_single.py          # Single-device training script
-│   ├── train_distributed.py     # Distributed training script
-│   ├── hyperparam_tune.py       # Hyperparameter tuning script
-│   └── compress_and_save.py     # Model compression and saving script
-│
-└── README.md                    # Project documentation
-```
-
-## 🚀 Future Enhancements
-
-- **Add Support for Additional Modalities:** Such as **text** or **audio data**.
-- **Advanced Model Compression Techniques:** Further reduce model size without compromising accuracy.
-- **Cloud Integration:** Deploy seamlessly to cloud platforms like AWS, Azure, or GCP.
-
-## 🙏 Acknowledgments
-
-Special thanks to the contributors and open-source community for supporting distributed machine learning solutions. 🌐💡
-
-## 🤝 Contributing
-
-We welcome contributions! Feel free to submit pull requests, open issues, and suggest improvements.
-
-## 📄 License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+- **Multi-Modal Data Processing**: Combines image and tabular data for more insightful predictions.
+- **Distributed Scalability**: Powered by PyTorch Lightning’s **DDP (Distributed Data Parallel)** to scale training across multiple devices.
+- **Automated Hyperparameter Tuning**: Efficient tuning via **Ray Tune** for better model performance.
+- **Optimized for Deployment**: Supports **model compression** for deployment on low-resource environments.
+- **Future-Ready Architecture**: Easily extendable for real-world large-scale applications.
 
 ---
 
-🎉 **Happy Coding & Model Training!** 🎉
+## 🔧 **Installation and Setup**
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/username/multi-modal-ml.git
+cd multi-modal-ml
+```
+
+### Step 2: Install Dependencies
+
+Ensure you have the necessary packages installed:
+
+```bash
+pip install -r requirements.txt
+```
+
+*Dependencies include*: `torch`, `torchvision`, `pytorch-lightning`, `ray`, `scikit-learn`, `pandas`, `pillow`.
+
+### Step 3: Prepare the Data
+
+Organize your datasets:
+- **Tabular Data**: Should be in CSV format and ready for preprocessing.
+- **Images**: Images should be placed in a well-structured directory.
+
+---
+
+## 🏗️ **How to Use**
+
+### Dataset Preparation
+
+- Ensure your **tabular data** is preprocessed and structured correctly.
+- Modify the `MultiModalDataset` class in the scripts if necessary to fit your data format.
+
+### Training
+
+Run **single-device training**:
+
+```bash
+python scripts/train_single.py
+```
+
+Or for **distributed training**:
+
+```bash
+python -m torch.distributed.launch --nproc_per_node=<number_of_devices> scripts/train_distributed.py
+```
+
+### Hyperparameter Tuning
+
+To perform distributed **hyperparameter tuning** with **Ray Tune**:
+
+```bash
+python scripts/hyperparam_tune.py
+```
+
+### Model Compression & Deployment
+
+Run the following script to compress and save your trained model for efficient deployment:
+
+```bash
+python scripts/compress_and_save.py
+```
+
+---
+
+## 📂 **Project Structure**
+
+```bash
+multi-modal-ml/
+│
+├── data/                         # Data storage
+│   ├── images/                   # Directory for images
+│   └── tabular_data.csv          # CSV for tabular data
+│
+├── models/                       # Model architecture and custom layers
+│
+├── scripts/                      # Scripts for training, tuning, and deployment
+│   ├── train_single.py           # Single device training
+│   ├── train_distributed.py      # Multi-device distributed training
+│   ├── hyperparam_tune.py        # Hyperparameter tuning with Ray Tune
+│   └── compress_and_save.py      # Model compression for deployment
+│
+└── README.md                     # Documentation
+```
+
+---
+
+## 🔮 **Future Improvements**
+
+- **Text & Audio Modalities**: Extend support to other data types, including text and audio.
+- **Advanced Compression**: Explore methods like **pruning** to further minimize model size.
+- **Cloud Deployment**: Prepare the system for cloud-based environments (AWS, Azure, GCP).
+
+---
+
+## 🙌 **Acknowledgments**
+
+Big thanks to the open-source community and contributors for developing tools like **PyTorch**, **Ray**, and **Lightning** which make large-scale machine learning accessible. 🌍
+
+---
+
+## 💼 **Contributing**
+
+Contributions are welcome! Submit a **pull request**, raise an **issue**, or suggest new features.
+
+---
